@@ -35,6 +35,9 @@ jobs:
         if [ ${{ matrix.version }} != "jdk8u" ]; then
           export BUILD_ARGS="--skip-freetype"
         fi
+        if [ ${{ matrix.version }} == "jdk8u" ]; then
+          export DEVELOPER_DIR="/Applications/Xcode_11.7.app/Contents/Developer"
+        fi
         ./build-farm/make-adopt-build-farm.sh
       env:
         JAVA_TO_BUILD: ${{ matrix.version }}
