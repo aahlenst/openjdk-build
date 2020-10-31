@@ -9,8 +9,8 @@ jobs:
     runs-on: macos-latest
     strategy:
       matrix:
-        version: [jdk8u, jdk11u, jdk15u, jdk]
-        vm: [hotspot, openj9]
+        version: [jdk8u, jdk11u]
+        vm: [hotspot]
 
     steps:
     - uses: actions/checkout@v2
